@@ -7,12 +7,12 @@ import { ForADay } from "./components/forADay"
 
 
 function App() {
-  const [weather, setWather] = useState(moc)
+  const [weather, setWather] = useState()
   const [location, setLocation] = useState()
 
 
-  // const { isLoaded, request, error } = useHttp()
-  const { request, error } = useHttp()
+  const { isLoaded, request, error } = useHttp()
+  //const { request, error } = useHttp()
 
 
   useEffect(() => {
@@ -22,20 +22,20 @@ function App() {
 
   const getweather = useCallback((city) => {
     (async () => {
-      //const resW = await request(`https://api.openweathermap.org/data/2.5/forecast?lat=${city.latitude}&lon=${city.longitude}&units=metric&lang=ru&appid=a65a3f613545bf5b9fac5ec4b39fe7bd`)
+      const resW = await request(`https://api.openweathermap.org/data/2.5/forecast?lat=${city.latitude}&lon=${city.longitude}&units=metric&lang=ru&appid=a65a3f613545bf5b9fac5ec4b39fe7bd`)
 
 
 
       setLocation(city)
 
-      //setWather((prev) => ({ ...prev, ...resW }))
+      setWather((prev) => ({ ...prev, ...resW }))
 
     })()
   }, [])
 
 
 
-  let isLoaded = true
+  // let isLoaded = true
 
   return (
 
@@ -44,7 +44,7 @@ function App() {
 
         !isLoaded ? (
 
-          <img style={{ height: "100vh", width: "100vh" }} src={require("./img/loaded.gif").default} alt="" />
+          <img style={{ height: "100vh", width: "100%" }} src={require("./img/loaded.gif").default} alt="" />
 
         ) : isLoaded && weather ? (
           <div className="App">
