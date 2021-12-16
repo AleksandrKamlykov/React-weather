@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../App.css'
 export const Today = (today) => {
 
 
@@ -7,7 +7,7 @@ export const Today = (today) => {
     return (
         <div className="wather-app">
             <div>
-                <img style={{ width: 200 }} src={require(`../img/animated/${today.today.list[0].weather[0].icon}.svg`).default} alt=" " />
+                <img className='weather-img' src={require(`../img/animated/${today.today.list[0].weather[0].icon}.svg`).default} alt=" " />
             </div>
             <div>
                 <h1>{today.today.city.name}</h1>

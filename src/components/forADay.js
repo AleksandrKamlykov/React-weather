@@ -81,7 +81,7 @@ export const ForADay = ({ forecast, location }) => {
                         <div>
                             <h2><strong> {Math.floor(day.main.temp)}°C</strong></h2>
                             <h3>{day.weather[0].description}</h3>
-                            <h4>вероятность<br />осадков: {day.pop * 100}%</h4>
+                            <h4>вероятность<br />осадков: {Math.floor(day.pop  * 100)}%</h4>
                         </div>
 
                     </div>
