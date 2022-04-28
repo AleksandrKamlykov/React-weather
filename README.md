@@ -1,4 +1,4 @@
-## Weather app
+# Weather app
 
 Weather-App is a climatology app that consumes one API to update the current climate and 4 days to come.
 
@@ -12,4 +12,4 @@ You will also see any lint errors in the console.
 
 ## Demo
 
-Demo app [https://aleksandrkamlykov.github.io/React-weather/]
+[Demo app](https://aleksandrkamlykov.github.io/React-weather/)
